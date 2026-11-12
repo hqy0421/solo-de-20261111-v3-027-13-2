@@ -66,7 +66,7 @@ jobs:
       # The docs check below builds the docs site with this tree.
       - name: Upload the generated docs
         if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: connect-docs-head
           path: docs/modules
@@ -109,7 +109,7 @@ jobs:
       - name: Generate the reference docs
         run: go run -tags x_benthos_extra ./cmd/tools/docs_gen
       - name: Upload the generated docs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: connect-docs-base
           path: docs/modules
